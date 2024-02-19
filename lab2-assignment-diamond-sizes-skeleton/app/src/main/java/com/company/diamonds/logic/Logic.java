@@ -39,13 +39,40 @@ public class Logic
         mOut = out;
     }
 
+
+    public String repeat(String str, int count) {
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i < count; i++) {
+            result.append(str);
+        }
+        return result.toString();
+    }
+    /** определение метода repeat
+
     /**
      * This is the method that will (eventually) get called when the
      * on-screen button labeled 'Process...' is pressed.
      */
     public void process(int size) {
 
-        // TODO -- add your code here
+        int a = 0;
+        int count = 0;
+        for (int i = 0; i < size * 2 + 1; i++) {
+            String sym = i % 2 == 1 ? "=" : "-";
+            if (i == 0 || i == size * 2) {
+                mOut.println("+" + repeat("-", size*2) + "+"); /** Вывод шапки и фуутера   **/
+            } else if (i == size) {
+                mOut.println("|<" + repeat(sym, size * 2 - 2) + ">|"); /** Вывод середины   **/
+                a += 2;
+                count += 1;
+            } else {
+                String slash1 = i < size ? "/" : "\\"; /** Вывод вершней и нижней части (до середины и после) **/
+                String slash2 = i < size ? "\\" : "/";
+                a += i < size ? 2 : -2;
+                count += i < size ? 1 : -1;
+                mOut.println("|" + repeat(" ", size-count) + slash1 + repeat(sym, a -2) + slash2 + repeat(" ", size-count) + "|");
+            }
+        }
 
     }
 
