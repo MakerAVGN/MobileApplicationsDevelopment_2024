@@ -160,6 +160,51 @@ public class Logic
         }
     }
 
-    // TODO -- add your code here
+    public static double rectangleArea(double length, double width) {
+        double area = length * width; // Площадь прямоугольника = длина * ширина
+        return area;
+    }
+    public static double rectanglePerimeter(double length, double width) {
+        double perimeter = 2 * (length + width); // Периметр прямоугольника = 2 * (длина + ширина)
+        return perimeter;
+    }
+
+    public static double circleArea(double radius) {
+        double area = Math.PI * radius * radius; // Площадь круга = π * радиус * радиус
+        return area;
+    }
+
+    public static double circleCircumference(double radius) {
+        double circumference = 2 * Math.PI * radius; // Длина окружности = 2 * π * радиус
+        return circumference;
+    }
+    public static double rightTriangleArea(double base, double height) {
+        double area = 0.5 * base * height; // Площадь прямоугольного треугольника = 0.5 * основание * высота
+        return area;
+    }
+
+    public static double rightTrianglePerimeter(double base, double height) {
+        double hypotenuse = Math.sqrt(base * base + height * height); // Находим гипотенузу по теореме Пифагора
+        double perimeter = base + height + hypotenuse; // Периметр прямоугольного треугольника = основание + высота + гипотенуза
+        return perimeter;
+    }
+    public static double boxVolume(double length, double width, double depth) {
+        double volume = length * width * depth; // Объем параллелепипеда = длина * ширина * высота
+        return volume;
+    }
+
+    public static double boxSurfaceArea(double length, double width, double depth) {
+        double surfaceArea = 2 * (length * width + length * depth + width * depth); // Площадь поверхности параллелепипеда = 2 * (площадь оснований + площадь боковых граней)
+        return surfaceArea;
+    }
+
+    public static double sphereVolume(double radius) {
+        double volume = (4.0 / 3.0) * Math.PI * Math.pow(radius, 3); // Объем сферы = (4/3) * π * радиус^3
+        return volume;
+    }
+    public static double sphereSurfaceArea(double radius) {
+        double surfaceArea = 4 * Math.PI * Math.pow(radius, 2); // Площадь поверхности сферы = 4 * π * радиус^2
+        return surfaceArea;
+    }
 
 }
