@@ -1,6 +1,8 @@
 package com.company.birthdayprob.logic;
 
 import java.util.Random;
+import java.util.ArrayList;
+import java.util.Random;
 
 import com.company.birthdayprob.ui.OutputInterface;
 
@@ -74,9 +76,26 @@ public class Logic
      * <p>
      * We provide you this method that way we can test it with unit testing.
      */
-    public double calculate(int size, int count) {
-        // TODO -- add your code here
 
+
+    public double calculate(int size, int count) {
+        ArrayList<Integer> peopleList = new ArrayList<Integer>();
+        double counter = 0;
+        for (int j = 0; j < count; j++) {
+            final Random random = new Random(j);
+            for (int i = 0; i < size; i++) {
+                peopleList.add(random.nextInt(365));
+            }
+            for (int i = 0;i< peopleList.size();i++){
+
+                if (peopleList.indexOf(peopleList.get(i)) != peopleList.lastIndexOf(peopleList.get(i))){
+                    counter++;
+                    break;
+                }
+            }
+
+            peopleList.clear();
+        }
+        return (counter / count * 100);
     }
-    // TODO - add your code here
 }
