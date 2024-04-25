@@ -13,13 +13,13 @@ import com.company.buildings.ui.OutputInterface;
  * you to first learn key 'Java' features without having to beforehand
  * learn the complexities of Android.
  */
-public class Logic 
-       implements LogicInterface {
+public class Logic
+        implements LogicInterface {
     /**
      * Used for logging.
      */
     public static final String TAG =
-        Logic.class.getName();
+            Logic.class.getName();
 
     /**
      * Reference to the output object.
@@ -41,15 +41,15 @@ public class Logic
     public void process() {
         // Get the list of all the buildings.
         final BuildingList list =
-            new BuildingList();
+                new BuildingList();
 
         // Get the list of houses.
         final House[] house =
-            list.getHouses();
+                list.getHouses();
 
         // Get the list of offices.
         final Office[] office =
-            list.getOffices();
+                list.getOffices();
 
         Neighborhood.print(house, "Houses", mOut);
         mOut.println("");
@@ -57,7 +57,7 @@ public class Logic
 
         mOut.println("");
         mOut.println("Total neighborhood area: " +
-                     (Neighborhood.calcArea(house) +
-                      Neighborhood.calcArea(office)));
+                (Neighborhood.calcArea(house) +
+                        Neighborhood.calcArea(office)));
     }
 }
